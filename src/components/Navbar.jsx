@@ -112,16 +112,12 @@ const Navbar = ({ activeSection }) => {
               <motion.button
                 key={item.id}
                 onClick={() => handleClick(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                  item.id === "contact"
-                    ? "bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-500 hover:to-indigo-500 shadow-lg shadow-violet-500/25"
-                    : "text-slate-400 hover:text-white"
-                }`}
+                className="relative px-3 py-2 text-sm font-medium rounded-md transition-colors text-slate-400 hover:text-white"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {item.label}
-                {activeSection === item.id && item.id !== "contact" && (
+                {activeSection === item.id && (
                   <motion.span
                     layoutId="nav-indicator"
                     style={{
@@ -163,11 +159,9 @@ const Navbar = ({ activeSection }) => {
                 key={item.id}
                 onClick={() => handleClick(item.id)}
                 className={`text-left text-sm py-2 px-3 rounded-lg ${
-                  item.id === "contact"
-                    ? "bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold shadow-lg shadow-violet-500/25"
-                    : activeSection === item.id
-                      ? "text-violet-400 bg-violet-500/10"
-                      : "text-slate-400 hover:text-white"
+                  activeSection === item.id
+                    ? "text-violet-400 bg-violet-500/10"
+                    : "text-slate-400 hover:text-white"
                 }`}
               >
                 {item.label}
