@@ -8,7 +8,7 @@ import {
 } from "motion/react";
 
 const stats = [
-  { value: 1, suffix: " Year", label: "Professional Experience" },
+  { value: 2, suffix: " Years", label: "Professional Experience" },
   { value: 5, suffix: "+", label: "Full Stack Projects" },
   { value: 8.34, suffix: "", label: "CGPA" },
   { value: 10, suffix: "+", label: "Technologies" },
