@@ -91,7 +91,7 @@ const Contact = () => {
                   <contact.icon size={28} />
                 </div>
                 <h3 className="font-bold text-white mb-1">{contact.label}</h3>
-                <p className="text-slate-400 text-sm font-mono break-all">
+                <p className="text-slate-400 text-sm break-all">
                   {contact.value}
                 </p>
               </motion.a>

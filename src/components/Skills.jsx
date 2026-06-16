@@ -142,7 +142,7 @@ const Skills = () => {
                     ) : (
                       <i className={`${skill.icon} text-[28px]`} />
                     )}
-                    <span className="text-white text-xs font-mono leading-none">
+                    <span className="text-white text-xs leading-none">
                       {skill.name}
                     </span>
                   </motion.div>

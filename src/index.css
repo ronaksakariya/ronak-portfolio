@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+@layer utilities {
+  .font-quantico {
+    font-family: "Quantico", sans-serif;
+  }
+  .font-jetbrains {
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
 @theme {
-  --font-sans: "Poppins", sans-serif;
-  --font-mono: "Poppins", sans-serif;
   --color-bg-base: #050508;
   --color-bg-layer: #0d0d14;
   --color-accent-primary: #8b5cf6;

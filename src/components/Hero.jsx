@@ -215,13 +215,13 @@ const Hero = () => {
           variants={heroItem}
           className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-4"
         >
-          <span className="text-white">Ronak </span>
-          <span className="text-violet-400">Sakariya</span>
+          <span className="text-white font-quantico">Ronak </span>
+          <span className="text-violet-400 font-quantico">Sakariya</span>
         </motion.h1>
 
         <motion.p
           variants={heroItem}
-          className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-6 font-mono"
+          className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-6 font-jetbrains"
         >
           {displayText}
           <motion.span
@@ -239,7 +239,7 @@ const Hero = () => {
 
         <motion.p
           variants={heroItem}
-          className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-8"
+          className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl mx-auto mb-8 font-jetbrains"
         >
           Engineered for performance. Built for scale. Shipped to production.
           Building robust backends and polished frontends that scale beyond

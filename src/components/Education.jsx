@@ -1,5 +1,11 @@
 import { useRef, useEffect } from "react";
-import { motion, useInView, useMotionValue, useTransform, animate } from "motion/react";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+  animate,
+} from "motion/react";
 import { GraduationCap } from "lucide-react";
 
 const sectionVariants = {
@@ -38,7 +44,10 @@ const CGPABar = () => {
   }, [isInView, progress]);
 
   return (
-    <div ref={ref} className="w-full bg-white/5 rounded-full h-3 overflow-hidden border border-white/10">
+    <div
+      ref={ref}
+      className="w-full bg-white/5 rounded-full h-3 overflow-hidden border border-white/10"
+    >
       <motion.div
         style={{ width }}
         className="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full"
@@ -88,16 +97,15 @@ const Education = () => {
                   Bachelor of Engineering — Computer Science
                 </h3>
                 <p className="text-violet-400 text-sm mt-1">
-                  Shri Labhubhai Trivedi Institute of Engineering and Technology, Rajkot
+                  Shri Labhubhai Trivedi Institute of Engineering and
+                  Technology, Rajkot
                 </p>
               </div>
             </div>
 
             <div className="flex items-center justify-between text-sm text-slate-400 mb-3">
               <span>Graduated: 2025</span>
-              <span className="font-mono text-violet-400 font-bold">
-                CGPA: 8.34 / 10
-              </span>
+              <span className="text-violet-400 font-bold">CGPA: 8.34 / 10</span>
             </div>
 
             <CGPABar />

@@ -89,10 +89,7 @@ const Experience = () => {
 
           <div className="relative pl-8 border-l-2 border-violet-500/30 space-y-6">
             {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                variants={cardVariants}
-              >
+              <motion.div key={index} variants={cardVariants}>
                 <motion.div
                   className="absolute left-0 w-4 h-4 rounded-full bg-violet-500 -translate-x-[9px]"
                   style={{ top: `${index * 50}%` }}
@@ -113,23 +110,20 @@ const Experience = () => {
                   className="backdrop-blur-md bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8 hover:border-violet-500/30 transition-colors"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                    <h3 className="text-xl font-bold text-white">
-                      {exp.role}
-                    </h3>
-                    <span className="text-sm text-slate-400 font-mono">
-                      {exp.period}
-                    </span>
+                    <h3 className="text-xl font-bold text-white">{exp.role}</h3>
+                    <span className="text-sm text-slate-400">{exp.period}</span>
                   </div>
                   <p className="text-violet-400 font-semibold mb-1">
                     {exp.company}
                   </p>
-                  <p className="text-slate-500 text-sm mb-4">
-                    {exp.location}
-                  </p>
+                  <p className="text-slate-500 text-sm mb-4">{exp.location}</p>
 
                   <ul className="space-y-2 mb-4">
                     {exp.bullets.map((bullet, i) => (
-                      <li key={i} className="text-slate-300 text-sm leading-relaxed">
+                      <li
+                        key={i}
+                        className="text-slate-300 text-sm leading-relaxed"
+                      >
                         <span className="text-violet-400 mr-2">▸</span>
                         {bullet}
                       </li>
@@ -140,7 +134,7 @@ const Experience = () => {
                     {exp.techs.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 text-xs bg-purple-500/10 border border-purple-500/30 rounded-full font-mono text-violet-300"
+                        className="px-2.5 py-1 text-xs bg-purple-500/10 border border-purple-500/30 rounded-full text-violet-300"
                       >
                         {tech}
                       </span>

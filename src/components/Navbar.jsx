@@ -71,10 +71,7 @@ const Navbar = ({ activeSection }) => {
           left: 0,
           right: 0,
           zIndex: 9998,
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          background: "rgba(255,255,255,0.05)",
-          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          background: "transparent",
         }}
       >
         <div
@@ -101,10 +98,10 @@ const Navbar = ({ activeSection }) => {
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="text-xl font-extrabold tracking-tight no-underline shine-text"
+            className="text-xl font-extrabold tracking-tight no-underline shine-text font-quantico"
           >
             <span>rsak.</span>
-            <span className="text-indigo-400">Dev</span>
+            <span className="text-indigo-400">dev</span>
           </motion.a>
 
           <div className="hidden md:flex items-center gap-1">
