@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { MotionConfig } from "motion/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -21,6 +21,7 @@ const sectionIds = [
 
 const App = () => {
   const [activeSection, setActiveSection] = useState("experience");
+  const overrideRef = useRef(null);
 
   useEffect(() => {
     const observers = [];
@@ -31,7 +32,7 @@ const App = () => {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !overrideRef.current) {
               setActiveSection(id);
             }
           });
@@ -45,13 +46,21 @@ const App = () => {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
+  const handleNavClick = useCallback((id) => {
+    overrideRef.current = id;
+    setActiveSection(id);
+    setTimeout(() => {
+      overrideRef.current = null;
+    }, 1000);
+  }, []);
+
   return (
     <MotionConfig
       reducedMotion="user"
       transition={{ ease: "easeOut", duration: 0.5 }}
     >
       <div className="min-h-screen bg-bg-base text-slate-100">
-        <Navbar activeSection={activeSection} />
+        <Navbar activeSection={activeSection} onNavClick={handleNavClick} />
         <Hero />
         <Experience />
         <Skills />

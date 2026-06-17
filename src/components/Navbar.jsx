@@ -12,7 +12,7 @@ const navItems = [
   { id: "contact", label: "Contact" },
 ];
 
-const Navbar = ({ activeSection }) => {
+const Navbar = ({ activeSection, onNavClick }) => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -23,9 +23,10 @@ const Navbar = ({ activeSection }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = (id) => {
-    setMenuOpen(false);
+    onNavClick(id);
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+    requestAnimationFrame(() => el?.scrollIntoView({ behavior: "smooth" }));
   };
 
   const navContent = (
@@ -71,7 +72,11 @@ const Navbar = ({ activeSection }) => {
                       <motion.span
                         layoutId="nav-indicator"
                         className="absolute bottom-1 left-3 right-3 h-0.5 rounded-full bg-violet-500"
-                        transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 350,
+                          damping: 30,
+                        }}
                       />
                     )}
                   </motion.button>
